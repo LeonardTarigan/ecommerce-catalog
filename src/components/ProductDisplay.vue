@@ -1,10 +1,10 @@
 <script>
 import ProductSkeleton from './ProductSkeleton.vue';
+import UnavailableProduct from './UnavailableProduct.vue';
 
 export default {
     name: 'ProductDisplay',
-    components: { ProductSkeleton },
-
+    components: { ProductSkeleton, UnavailableProduct },
     data() {
         return {
             product: {},
@@ -82,7 +82,10 @@ export default {
     <section class="wrapper">
         <div class="product-box">
             <ProductSkeleton v-if="fetchStatus" />
-
+            <UnavailableProduct
+                v-if="!fetchStatus && !isAvailable"
+                :nextFunction="fetchNextProduct"
+            />
             <div v-if="!fetchStatus && isAvailable" class="product-wrapper">
                 <div class="img-wrapper">
                     <img :src="product.image" :alt="product.title" />

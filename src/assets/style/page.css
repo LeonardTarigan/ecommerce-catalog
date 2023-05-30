@@ -56,6 +56,11 @@ hr {
     z-index: -10;
     overflow: hidden;
     background-image: url(../bg-pattern.svg);
+    transition: all 200ms;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
 }
 
 .bg-men {
