@@ -68,6 +68,11 @@ export default {
                         buttonNext: 'btn-next-women',
                     };
                     break;
+                default:
+                    this.theme = {
+                        bg: 'bg-default',
+                    };
+                    break;
             }
         },
     },
