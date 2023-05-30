@@ -1,6 +1,10 @@
 <script>
+import ProductSkeleton from './ProductSkeleton.vue';
+
 export default {
     name: 'ProductDisplay',
+    components: { ProductSkeleton },
+
     data() {
         return {
             product: {},
@@ -77,6 +81,8 @@ export default {
     <div class="bg" :class="theme.bg"></div>
     <section class="wrapper">
         <div class="product-box">
+            <ProductSkeleton v-if="fetchStatus" />
+
             <div v-if="!fetchStatus && isAvailable" class="product-wrapper">
                 <div class="img-wrapper">
                     <img :src="product.image" :alt="product.title" />
