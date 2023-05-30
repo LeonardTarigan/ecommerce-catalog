@@ -182,3 +182,38 @@ hr {
     font-size: 0.75rem; /* 12px */
     line-height: 1rem; /* 16px */
 }
+
+.rating {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rating-circle {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.circle-men {
+    border-color: var(--dark-blue);
+}
+
+.circle-women {
+    border-color: var(--purple);
+}
+
+.filled-men {
+    background-color: var(--dark-blue);
+}
+
+.filled-women {
+    background-color: var(--purple);
+}

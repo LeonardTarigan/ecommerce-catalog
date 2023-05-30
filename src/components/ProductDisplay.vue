@@ -52,6 +52,8 @@ export default {
                     this.theme = {
                         bg: 'bg-men',
                         text: 'text-men',
+                        rating: 'circle-men',
+                        filled: 'filled-men',
                         buttonBuy: 'btn-buy-men',
                         buttonNext: 'btn-next-men',
                     };
@@ -60,15 +62,10 @@ export default {
                     this.theme = {
                         bg: 'bg-women',
                         text: 'text-women',
+                        rating: 'circle-women',
+                        filled: 'filled-women',
                         buttonBuy: 'btn-buy-women',
                         buttonNext: 'btn-next-women',
-                    };
-                    break;
-                default:
-                    this.theme = {
-                        bg: 'bg-default',
-                        text: 'text-default',
-                        button: 'btn-default',
                     };
                     break;
             }
@@ -97,8 +94,23 @@ export default {
                         <div>
                             <div class="category">
                                 <span>{{ product.category }}</span>
-                                <div>
+                                <div class="rating">
                                     <span>{{ product?.rating?.rate }}/5</span>
+                                    <div class="rating-circle">
+                                        <div
+                                            v-for="index in 5"
+                                            :key="index"
+                                            class="circle"
+                                            :class="[
+                                                theme.rating,
+                                                {
+                                                    [theme.filled]:
+                                                        index <=
+                                                        product?.rating?.rate,
+                                                },
+                                            ]"
+                                        ></div>
+                                    </div>
                                 </div>
                             </div>
                             <hr />
